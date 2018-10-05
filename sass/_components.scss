@@ -372,11 +372,11 @@
 
 .review {
     background-color: #FFF;
-    margin-bottom: 3rem;
-    padding: 3rem;
     box-shadow: var(--shadow-light);
-    position: relative;
+    margin-bottom: 3rem;
     overflow: hidden;
+    padding: 3rem;
+    position: relative;
 
     &__text {
         margin-bottom: 2rem;
@@ -428,5 +428,64 @@
         top: -3rem;
         left: -0.5rem;
         z-index: 10;
+    }
+}
+
+//CALL TO ACTION
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+        text-transform: uppercase;
+    }
+}
+
+.btn {
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    border: none;
+    border-radius: 10rem;
+    color: #FFF;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    text-transform: uppercase;
+    
+    & > * {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        transition: all 0.2s;
+    }
+    
+    &__visible {
+        padding: 2rem 6.5rem;
+    }
+    
+    &__invisible {
+        padding: 2rem 0;
+        position: absolute;
+        left: 0;
+        top: -100%;
+    }
+    
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));        
+    }
+
+    &:focus {
+        animation: pulsate 0.5s infinite;
+        outline: none;
+    }
+
+    &:hover &__visible{
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible{
+        top: 0;
     }
 }
