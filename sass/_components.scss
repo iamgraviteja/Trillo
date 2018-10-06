@@ -10,15 +10,20 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;   
+    
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+    }
     
     &__input {
+        background-color: var(--color-grey-light-2);
         border: none;
         border-radius: 10rem;
         font-size: inherit;
-        font-weight: inherit;
         font-family: inherit;
-        background-color: var(--color-grey-light-2);
+        font-weight: inherit;
         margin-right: -3.25rem;
         padding: 0.7rem 2rem;
         width: 30%;
@@ -29,9 +34,13 @@
         }
         
         &:focus {
+            background-color: var(--color-grey-light-3);
             outline: none;
             width: 100%;
-            background-color: var(--color-grey-light-3);
+
+            @media only screen and (max-width: $bp-smallest) {
+                width: 90%;
+            }
         }
         
         &::-webkit-input-placeholder {
@@ -139,7 +148,6 @@
             
             @media only screen and (max-width: $bp-medium) {
                 margin-bottom: 0;
-                margin-right: 0.5rem;
             }
         }
 
@@ -176,6 +184,10 @@
             justify-content: center;
         }
 
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+        }
+
         &:link, &:visited {
             color: var(--color-grey-light-1);
             font-size: 1.4rem;
@@ -186,6 +198,10 @@
             @media only screen and (max-width: $bp-medium) {
                 padding: 2rem;
             }
+            
+            @media only screen and (max-width: $bp-small) {
+                padding: 1.5rem 0.5rem;
+            }
         }
     }
 
@@ -194,6 +210,13 @@
         margin-right: 2rem;
         height: 1.75rem;
         width: 1.75rem;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0;
+            margin-bottom: 0.8rem;
+            height: 1.5rem;
+            width: 1.5rem;
+        }
     }
 }
 
@@ -226,11 +249,16 @@
     align-items: center;
 
     &__heading {
-        text-transform: uppercase;
         font-size: 2.25rem;
         font-weight: 300;
-        padding: 1.5rem 3rem;
+        text-transform: uppercase;
         letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+        
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars {
@@ -267,14 +295,27 @@
         justify-content: center;
         flex-direction: column;
 
+        @media only screen and (max-width: $bp-small) {
+            padding: 0 1.5rem;
+        }
+
         &-average {
             font-size: 2.25rem;
             font-weight: 300;
+
+            @media only screen and (max-width: $bp-small) {
+                font-size: 1.8rem;
+            }
+    
         }
         
         &-count {
             font-size: 0.85rem;
             text-transform: uppercase;
+
+            @media only screen and (max-width: $bp-small) {
+                font-size: 0.5rem;
+            }
         }
     }
 }
